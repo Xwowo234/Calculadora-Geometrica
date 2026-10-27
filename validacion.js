@@ -1,10 +1,5 @@
 'use strict';
 
-/**
- * validacion.js
- * Reglas de validación puras: NO tocan el DOM.
- * Reciben el texto capturado y regresan { valido, valor, mensaje }.
- */
 const Validacion = {
   // Número decimal positivo o negativo (para poder detectar el negativo y avisarlo)
   PATRON_NUMERO: /^-?\d+(\.\d+)?$|^-?\.\d+$/,
@@ -30,11 +25,6 @@ const Validacion = {
     return { valido: true, valor };
   },
 
-  /**
-   * Valida un conjunto de campos.
-   * @param {Array<{id, etiqueta, texto}>} entradas
-   * @returns {{ valido, valores, errores: Array<{id, mensaje}> }}
-   */
   validarFormulario(entradas) {
     const valores = {};
     const errores = [];
